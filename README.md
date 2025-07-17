@@ -38,5 +38,5 @@ To run experiments with the replicated LinearSVM-Comparative model, run -
 python LinearSVM_Comparative.py
 ```
 
-GPT2SP replication results were collected by running scripts publicly made available through the GPT2SP repository.
+GPT2SP replication results were collected by running scripts publicly made available through the [GPT2SP repository](https://github.com/awsm-research/gpt2sp).
 
