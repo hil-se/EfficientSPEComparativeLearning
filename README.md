@@ -30,7 +30,7 @@ python SBERT_Regression.py
 To run experiments with the replicated FastText-SVM model, run -
 
 ```
-python FastTextSVM_Comparative.py
+python FastTextSVM_Replication.py
 ```
 
 To run experiments with the replicated LinearSVM-Comparative model, run -
