@@ -81,7 +81,7 @@ def train_and_test_iterative(dataname, N=1, itr=20):
         train_y = np.array(train_list["Score"].tolist())
         train_feature = features["A"]-features["B"]
 
-        model = LinearSVC(loss="hinge") # Declare new SVM model
+        model = LinearSVC(loss="hinge", fit_intercept = False) # Declare new SVM model
         model.fit(train_feature, features["Label"]) # Train new SVM model
         preds_test = model.decision_function(test_x).flatten() # Get predictions
         preds_train = model.decision_function(train_x).flatten()
