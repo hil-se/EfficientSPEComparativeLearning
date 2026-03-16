@@ -40,3 +40,13 @@ python LinearSVM_Comparative.py
 
 GPT2SP replication results were collected by running scripts publicly made available through the [GPT2SP repository](https://github.com/awsm-research/gpt2sp).
 
+
+## Human-subject experiments data
+Data from HSE-2 is available as a zip file under the Data/ directory. Unzip the file in that same directory for the raw data collected through the study.
+
+## Human-subject experiments data analysis
+To get the summarized results of HSE-2, run -
+
+```
+python HSE2.py
+```
