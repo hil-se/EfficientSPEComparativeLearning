@@ -43,6 +43,7 @@ GPT2SP replication results were collected by running scripts publicly made avail
 
 ## Human-subject experiments data
 Raw data from HSE-1 is available as a single .csv file under the Data/ directory.
+
 Raw data from HSE-2 is available as a zip file under the Data/ directory. Unzip the file in that same directory for the raw data collected through the study.
 
 ## Human-subject experiments data analysis
