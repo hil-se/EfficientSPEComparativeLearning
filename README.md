@@ -39,12 +39,16 @@ python LinearSVM_Comparative.py
 ```
 
 GPT2SP replication results were collected by running scripts publicly made available through the [GPT2SP repository](https://github.com/awsm-research/gpt2sp).
+Llama3SP replication results were collected by running scripts publicly made available through the [Llama3SP repository](https://github.com/DEVCamiloSepulveda/llama3sp).
+EnsembleSO replication results were collected by running scripts publicly made available through the [EnsembleSP repository](https://github.com/h3yzack/ml-sp-estimation).
 
 
 ## Human-subject experiments data
-Raw data from HSE-1 is available as a single .csv file under the Data/ directory.
+Raw data collected through HSE-1 and HSE-2 can be found in the Data/ directory.
 
-Raw data from HSE-2 is available as a zip file under the Data/ directory. Unzip the file in that same directory for the raw data collected through the study.
+The raw data for HSE-1 is available as a single .csv file, including the optional questions, user stories and each participant's provided story points (both direct and comparative).
+
+The raw data from HSE-2 is available as a zip file. Unzip the file in that same directory for the raw data collected through the study. This data includes each group and participants' optional questions, user stories and story points (both direct and comparative).
 
 ## Human-subject experiments data analysis
 To get the summarized results of HSE-1, run -
