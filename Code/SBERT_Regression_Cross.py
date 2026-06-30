@@ -59,6 +59,7 @@ def train_and_test_iterative(dataname, itr):
     test_y = test_list["Score"].tolist()
 
     train_list_og = pd.DataFrame(columns=["A", "Score"])
+    val_list_og = pd.DataFrame(columns=["A", "Score"])
 
     print(dataname)
 
@@ -66,7 +67,7 @@ def train_and_test_iterative(dataname, itr):
         if d != dataname:
             t_l, v_l, _ = process(d, "Storypoint")
             train_list_og = pd.concat([train_list_og, t_l], axis=0)
-            train_list_og = pd.concat([train_list_og, v_l], axis=0)
+            val_list_og = pd.concat([val_list_og, v_l], axis=0)
 
     train_list_og = train_list_og.sample(frac=1.0)
 
@@ -80,6 +81,9 @@ def train_and_test_iterative(dataname, itr):
         train_x = np.array(train_list["A"].tolist())
         train_y = np.array(train_list["Score"].tolist())
 
+        val_list_og = val_list_og.sample(frac=1.0)
+        val_x = np.array(val_list_og["A"].tolist())
+        val_y = np.array(val_list_og["Score"].tolist())
 
         model = build_model((train_x.shape[1]))
 
@@ -99,7 +103,7 @@ def train_and_test_iterative(dataname, itr):
                                                         verbose=1)
 
         history = model.fit(train_x, train_y,
-                            validation_data=None,
+                            validation_data=(val_x, val_y),
                             batch_size=32,
                             epochs=1000,
                             callbacks=[reduce_lr, checkpoint],
