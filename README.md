@@ -16,7 +16,6 @@ Once the dependencies are installed, run the corresponding files to run the comp
 For comparative experiments using the SBERT-Comparative model, run -
 ```
 python SBERT_Comparative.py
-python SBERT_Comparative_no_val.py
 ```
 
 ## Regression experiments
