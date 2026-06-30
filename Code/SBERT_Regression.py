@@ -53,7 +53,6 @@ def build_model(input_dim):
 def train_and_test_iterative(dataname, itr):
     print(dataname)
     train_list_og, val_list_og, test_list = process(dataname, "Storypoint")
-    train_list_og = pd.concat([train_list_og, val_list_og], axis=0)
 
     test_x = np.array(test_list["A"].tolist())
     test_y = test_list["Score"].tolist()
@@ -67,6 +66,10 @@ def train_and_test_iterative(dataname, itr):
         train_list = train_list_og.sample(frac=1.0)
         train_x = np.array(train_list["A"].tolist())
         train_y = np.array(train_list["Score"].tolist())
+
+        val_list_og = val_list_og.sample(frac=1.0)
+        val_x = np.array(val_list_og["A"].tolist())
+        val_y = np.array(val_list_og["Score"].tolist())
 
 
         model = build_model((train_x.shape[1]))
@@ -87,7 +90,7 @@ def train_and_test_iterative(dataname, itr):
                                                         verbose=1)
 
         history = model.fit(train_x, train_y,
-                            validation_data=None,
+                            validation_data=(val_x, val_y),
                             batch_size=32,
                             epochs=1000,
                             callbacks=[reduce_lr, checkpoint],
